@@ -1,0 +1,28 @@
+.slide-8.slides
+    h1 Communicate between controllers!
+
+    .code-box
+        p Here is a snippet of html code of a list of people and a friends list
+
+        div(hljs language="html") <div ng-controller="PeopleCtrl as people">
+            |    <ul>
+            |        <li ng-repeat="user in people.users">
+            |            {{user.name}}
+            |            <button ng-click="addFriend(user.id)">Add as Friend</button>
+            |        </li>
+            |    </ul>
+            |</div>
+            |<div ng-controller="FriendCtrl as friend">
+            |    <ul>
+            |        <li ng-repeat="user in friend.users">
+            |            {{user.name}}
+            |            <button ng-click="removeFriend(user.id)">Remove Friend</button>
+            |        </li>
+            |    </ul>
+            |</div>
+
+        p When a friend is added, it needs to be removed and go into FriendCtrl and when a friend is removed, it needs to go back to PeopleCtrl
+
+        p
+            a(href="http://plnkr.co/edit/tpl:FrTqqTNoY8BEfHs9bB0f" target="_blank") Lets get to work!
+

@@ -1,0 +1,28 @@
+//--Created by yangli on 28/01/15.
+
+.slide-6.slides(ng-controller="codeCtrl as code")
+    h1 Directives!
+    p Directive syntax
+    .code-box
+        div(hljs no-escape language="javascript") angular.module('app').directive('myDirective', function(){
+            |     return {
+            |         restrict: 'AE',           //Type of directive e.g element/attribute
+            |         priority: 99,             //The order of which directives on the same tree occurs first
+            |         terminal: true,           //When true, child directives will not be executed.
+            |         replace: true,            //When true, removes directive when rendered
+            |         require: '?^ngModel',     //depends on ngModel directive
+            |         controller: function(){}, //Controller which can be shared by other directives
+            |         controllerAs: 'alias',    //Alias for the above controller
+            |         scope: {},                //creates isolated scope
+            |         template: '<div></div>',  //Template that is placed within the directive
+            |         templateUrl: 'test.html', //A html template page
+            |         transclude: true          //If the template has another template within it
+            |         link: function(){}        //Linking function, runs after compilation
+            |         compile: function(){}     //Link is to Auto as compile is to Manual
+            |     }
+            | });
+
+        a(target="_blank" href="https://d2eip9sf3oo6c2.cloudfront.net/pdf/egghead-io-directive-definition-object-cheat-sheet.pdf") Directives cheatsheet by Egghead.io
+
+        h3
+            a(href="http://plnkr.co/edit/MnhA5luGXB4hcS1flPyL?p=preview" target="_blank") 1. Write a directive that removes placeholders when user has entered the text box

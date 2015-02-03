@@ -1,0 +1,16 @@
+//--Created by yangli on 2/02/15.
+
+.slide-11.slides
+    h1 Thank you
+    h3 In the spirit of Networking lets add each other!
+    div
+        form(name="linkedin" ng-controller="linkedInCtrl as linkedIn" ng-submit="linkedin.$valid && linkedIn.submitProfile()")
+            input(type="text" placeholder="name" ng-model="linkedIn.name" name="name" required)
+            input(type="url" placeholder="linkedin profile" ng-model="linkedIn.url" name="url" required)
+            button(type="submit") Add
+            p(ng-show="linkedin.$invalid && linkedin.name.$dirty && linkedin.url.$dirty") Something wrong with what you entered
+
+            ul.linkedIn
+                li(ng-repeat="profile in linkedIn.profiles")
+                    a(href="profile.link" target="_blank") {{profile.name}}
+

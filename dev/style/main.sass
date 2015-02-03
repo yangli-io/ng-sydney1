@@ -1,0 +1,40 @@
+body, html
+  overflow-y: hidden
+  font-family: Calibri
+
+body
+  margin: 0
+
+.slides
+  height: 100%
+  margin-left: 50px
+  margin-right: 50px
+
+.container
+  bottom: 0
+  position: absolute
+  text-align: center
+  top: 0
+  width: 100%
+
+.holder
+  height: 100%
+  width: 300%
+  left: 100%
+  background-color: #CCFFCC
+
+.slide-toggle
+  position: fixed
+  z-index: 99
+  font-size: 70px !important
+  cursor: pointer
+  top: 50%
+  &.left
+    left: 0
+  &.right
+    right: 0
+  &:hover
+    color: #30F0CD
+  .toggle-arrow
+    position: relative
+    top: -50px

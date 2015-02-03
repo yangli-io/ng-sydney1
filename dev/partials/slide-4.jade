@@ -1,0 +1,17 @@
+//-- Created by yangli on 25/01/15.
+
+.slide-4.slides
+    h1 Your Turn!
+    h3 How long have you been using angular?
+    div(ng-controller="surveyCtrl as survey" ng-submit="surveyForm.$valid && survey.sendData()")
+        form(name="surveyForm" ng-show="!survey.showLengthGraph")
+            input.length(ng-model="survey.years" ng-required="!survey.years && !survey.months" placeholder="years" name="years" ng-pattern="/^[0-4]$/")
+            input.length(ng-model="survey.months" ng-required="!survey.years && !survey.months" placeholder="months" name="months" ng-pattern="/^(0?([0-9])|([1][0-1]))$/")
+            button(type="submit") Submit
+            p(ng-show="surveyForm.years.$error.pattern || surveyForm.months.$error.pattern") Bad data...
+
+        .exp-graph(ng-show="survey.showLengthGraph")
+            canvas(id="line" class="chart chart-line" data="survey.data" labels="survey.labels" legend="false" series="survey.series" click="survey.onClick")
+
+
+

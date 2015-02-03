@@ -1,0 +1,22 @@
+//--Created by yangli on 25/01/15.
+
+doctype html
+html(ng-app="app")
+    head
+        meta(name="viewport" content="width=device-width")
+
+        title NG-Sydney
+        link(rel='stylesheet' href='style.css')
+        link(rel='stylesheet' href='fa/css/font-awesome.min.css')
+        link(rel='stylesheet' href='chart/angular-chart.css')
+        link(rel='stylesheet' href='highlight/default.css')
+        script(type='text/javascript' src='app.js')
+    body(ng-controller="pageCtrl as page" ng-cloak)
+        pre
+        .slide-toggle.left(ng-click="page.previousSlide()")
+
+            i.fa.fa-caret-left.toggle-arrow(ng-show='page.currentSlide > 1')
+        .slide-toggle.right(ng-click="page.nextSlide()" )
+            i.fa.fa-caret-right.toggle-arrow(ng-show="page.currentSlide < page.maxSlides")
+        .holder
+            .container(ng-class="{'left': !page.direction.right, 'right': page.direction.right}" ng-view)

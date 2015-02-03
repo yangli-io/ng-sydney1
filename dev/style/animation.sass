@@ -1,0 +1,90 @@
+
+/* slide in from the right
+@mixin slideInRightMixin($name: '')
+  from
+    #{$name}transform: translateX(100%)
+  to
+    #{$name}transform: translateX(0)
+
+@mixin slideOutLeftMixin($name: '')
+  to
+    #{$name}transform: translateX(-100%)
+
+@mixin slideInLeftMixin($name: '')
+  from
+    #{$name}transform: translateX(-100%)
+  to
+    #{$name}transform: translateX(0%)
+
+@mixin slideOutRightMixin($name: '')
+  to
+    #{$name}transform: translateX(100%)
+
+//Entering animations
+@keyframes slideInRight
+  @include slideInRightMixin()
+
+
+@-moz-keyframes slideInRight
+  @include slideInRightMixin(-moz-)
+
+
+@-webkit-keyframes slideInRight
+  @include slideInRightMixin(-webkit-)
+
+//Leaving animations
+@keyframes slideOutLeft
+  @include slideOutLeftMixin()
+
+
+@-moz-keyframes slideOutLeft
+  @include slideOutLeftMixin(-moz-)
+
+
+@-webkit-keyframes slideOutLeft
+  @include slideOutLeftMixin(-webkit-)
+
+//Entering animations
+@keyframes slideInLeft
+  @include slideInLeftMixin()
+
+
+@-moz-keyframes slideInLeft
+  @include slideInLeftMixin(-moz-)
+
+
+@-webkit-keyframes slideInLeft
+  @include slideInLeftMixin(-webkit-)
+
+//Leaving animations
+@keyframes slideOutRight
+  @include slideOutRightMixin()
+
+
+@-moz-keyframes slideOutRight
+  @include slideOutRightMixin(-moz-)
+
+
+@-webkit-keyframes slideOutRight
+  @include slideOutRightMixin(-webkit-)
+
+
+//animations
+
+@mixin page-animate($class, $animation)
+  #{$class}
+    -webkit-animation: #{$animation} 0.5s both ease-in
+    -moz-animation: #{$animation} 0.5s both ease-in
+    animation: #{$animation} 0.5s both ease-in
+
+@include page-animate('.left.ng-enter', slideInLeft)
+@include page-animate('.left.ng-leave', slideOutRight)
+
+@include page-animate('.right.ng-enter', slideInRight)
+@include page-animate('.right.ng-leave', slideOutLeft)
+
+
+
+
+
+
