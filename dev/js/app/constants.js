@@ -6,7 +6,7 @@
 (function(){
     'use strict';
     angular.module('app').constant('APP_VALUES', {
-        maxRoutes: 11,
+        maxRoutes: 10,
         URL: 'https://videoshare.firebaseio.com/'
     });
 })();
